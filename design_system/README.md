@@ -20,22 +20,22 @@ This design system gives an example of widgets to be used in the application.
 The Flutter Movies App have 3 different pages(Home, Discover and Details), that is detailed below
 - HOME_PAGE
   - Text
-  - Banner(KeepWatchingButton, Icon, MovieName)
+  - Banner([KeepWatchingButton], [Icon], MovieName)
   - Text
-  - PageView(Container(Image, Rating[Icon, Rating], Title))
-  - BottomNavBar(Icons)
+  - CarouselSlider(Container([Image], Rating[[Icon], Rating], Title))
+  - BottomNavBar([Icons])
 
 - DISCOVER_PAGE
   - Text
-  - Search(Icon, placeholder)
+  - Search([Icon], placeholder)
   - TabBar()
   - GridView(Container[ImageMovie], Text[ImageName])
 
 - DETAILS_PAGE
-  - VideoSection(SliverVideo, Title, Quality, Duration, Rating )
+  - VideoSection([SliverVideo], Title, Quality, Duration, Rating )
   - ReleaseSection(title, Date Release, GenreTitle, CategoryContainers)
   - SynopsysSection(title, Description)
-  - RelatedSection(Title, PageView)
+  - RelatedSection(Title, [PageView])
 ## Getting started
 
 After cloning the project, I recommend to use the version 3.0.5 of Flutter.
