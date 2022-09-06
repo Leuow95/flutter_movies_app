@@ -16,12 +16,31 @@ know whether this package might be useful for them.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+This design system gives an example of widgets to be used in the application.
+The Flutter Movies App have 3 different pages(Home, Discover and Details), that is detailed below
+- HOME_PAGE
+  - Text
+  - Banner(KeepWatchingButton, Icon, MovieName)
+  - Text
+  - PageView(Container(Image, Rating[Icon, Rating], Title))
+  - BottomNavBar(Icons)
 
+- DISCOVER_PAGE
+  - Text
+  - Search(Icon, placeholder)
+  - TabBar()
+  - GridView(Container[ImageMovie], Text[ImageName])
+
+- DETAILS_PAGE
+  - VideoSection(SliverVideo, Title, Quality, Duration, Rating )
+  - ReleaseSection(title, Date Release, GenreTitle, CategoryContainers)
+  - SynopsysSection(title, Description)
+  - RelatedSection(Title, PageView)
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+After cloning the project, I recommend to use the version 3.0.5 of Flutter.
+To run the project in your machine, run the command `flutter pub get` or `fvm flutter pub get`
+if you are using the fvm.
 
 ## Usage
 
