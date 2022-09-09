@@ -11,6 +11,7 @@ class HomePage extends StatelessWidget {
         appBar: AppBar(
           title: const Text("HomePage"),
         ),
+        drawer: const Drawer(),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
