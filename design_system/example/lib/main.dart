@@ -12,10 +12,14 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        useMaterial3: true,
-        primaryColor: Colors.grey[900],
-        primarySwatch: Colors.deepOrange,
-      ),
+          useMaterial3: true,
+          primaryColor: const Color(0xff212121),
+          primaryColorLight: const Color(0xff484848),
+          primaryColorDark: const Color(0xff000000),
+          primarySwatch: Colors.deepOrange,
+          secondaryHeaderColor: const Color(0xffff5722),
+          primaryTextTheme:
+              const TextTheme(bodyText1: TextStyle(color: Color(0xffffffff)))),
       initialRoute: "/home_page",
       routes: {
         "/home_page": (context) => const HomePage(),
