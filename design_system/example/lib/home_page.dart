@@ -24,6 +24,7 @@ class HomePage extends StatelessWidget {
                 width: 340,
               ),
             ),
+            KeepWatchingButton(title: "titulo"),
           ],
         ),
       ),
