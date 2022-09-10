@@ -14,9 +14,9 @@ class KeepWatchingButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 62,
-      width: 220,
+      width: 240,
       decoration: BoxDecoration(
-        color: Color(0xffDADADA).withOpacity(0.6),
+        color: Color(0xffDADADA).withOpacity(0.45),
         borderRadius: BorderRadius.circular(20),
       ),
       child: ClipRRect(
@@ -39,8 +39,22 @@ class KeepWatchingButton extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
                   children: [
-                    Text("Continue Watching"),
-                    Text("Ready Player One"),
+                    Text(
+                      "Continue Watching",
+                      style: TextStyle(
+                        color: Color(0xffBCBCBC),
+                        fontStyle: FontStyle.normal,
+                        fontSize: 12,
+                      ),
+                    ),
+                    Text(
+                      "Ready Player One",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontStyle: FontStyle.normal,
+                        fontSize: 16,
+                      ),
+                    ),
                   ],
                 ),
               )
