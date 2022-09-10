@@ -15,17 +15,25 @@ class HomePage extends StatelessWidget {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: const [
-            Text("HomePage"),
+          children: [
+            const Text("HomePage"),
             Padding(
-              padding: EdgeInsets.all(16.0),
-              child: MovieBanner(
-                image: 'https://picsum.photos/250?image=9',
-                heigth: 192,
-                width: 340,
+              padding: const EdgeInsets.all(16.0),
+              child: Stack(
+                alignment: AlignmentDirectional.bottomStart,
+                children: const [
+                  MovieBanner(
+                    image: 'https://picsum.photos/250?image=9',
+                    heigth: 192,
+                    width: 340,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(8),
+                    child: KeepWatchingButton(title: "titulo"),
+                  ),
+                ],
               ),
             ),
-            KeepWatchingButton(title: "titulo"),
           ],
         ),
       ),
