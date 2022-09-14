@@ -38,7 +38,10 @@ class _FMCarouselSliderState extends State<FMCarouselSlider> {
       physics: BouncingScrollPhysics(),
       itemBuilder: ((context, index) {
         final bool active = index == currentPage;
-        return MovieImage(active);
+        return MovieImage(
+          active: active,
+          image: "https://picsum.photos/250?image=9",
+        );
       }),
     );
   }
