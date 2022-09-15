@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class MovieImage extends StatefulWidget {
-  final bool active;
   final String image;
+  final double scale;
   const MovieImage({
     required this.image,
-    required this.active,
+    required this.scale,
     Key? key,
   }) : super(key: key);
 
@@ -17,18 +17,17 @@ class _MovieImageState extends State<MovieImage> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.only(
+        right: 15,
+        left: 15,
+        top: 100 - widget.scale * 25,
+        bottom: 50,
+      ),
       color: Colors.green,
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: AnimatedContainer(
-          duration: Duration(milliseconds: 500),
-          margin: EdgeInsets.only(top: 40, bottom: 50, right: 30),
-          curve: Curves.ease,
-          decoration: BoxDecoration(
-            image: DecorationImage(image: NetworkImage(widget.image)),
-            borderRadius: BorderRadius.circular(20),
-          ),
-        ),
+      child: Image(
+        image: NetworkImage(widget.image),
+        width: MediaQuery.of(context).size.width,
+        fit: BoxFit.cover,
       ),
     );
   }
