@@ -34,7 +34,9 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
-            const Expanded(child: FMCarouselSlider()),
+            const Expanded(
+              child: FMCarouselSlider(),
+            ),
           ],
         ),
       ),
