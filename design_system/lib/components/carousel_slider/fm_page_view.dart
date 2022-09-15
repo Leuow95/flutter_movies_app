@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:design_system/components/images/fm_movie_image.dart';
 import 'package:flutter/material.dart';
 
@@ -9,20 +11,20 @@ class FMCarouselSlider extends StatefulWidget {
 }
 
 class _FMCarouselSliderState extends State<FMCarouselSlider> {
-  final pageController = PageController(viewportFraction: 0.75);
-  int currentPage = 0;
-
+  late PageController pageController;
+  double pageOffset = 0;
+  double viewPortFraction = 0.8;
   @override
   void initState() {
     super.initState();
-    pageController.addListener(() {
-      int position = pageController.page!.round();
-      if (currentPage != position) {
+    pageController = PageController(
+      initialPage: 2,
+      viewportFraction: viewPortFraction,
+    )..addListener(() {
         setState(() {
-          currentPage = position;
+          pageOffset = pageController.page!;
         });
-      }
-    });
+      });
   }
 
   @override
@@ -34,13 +36,15 @@ class _FMCarouselSliderState extends State<FMCarouselSlider> {
   @override
   Widget build(BuildContext context) {
     return PageView.builder(
+      controller: pageController,
       itemCount: 8,
       physics: BouncingScrollPhysics(),
       itemBuilder: ((context, index) {
-        final bool active = index == currentPage;
+        double scale = (max(viewPortFraction, 1 - (pageOffset - index).abs()) +
+            viewPortFraction);
         return MovieImage(
-          active: active,
           image: "https://picsum.photos/250?image=9",
+          scale: scale,
         );
       }),
     );
