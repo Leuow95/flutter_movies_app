@@ -21,8 +21,8 @@ class _MovieImageState extends State<MovieImage> {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
           border: Border.all(
-            color: Colors.blue,
-            width: 4.0,
+            color: Colors.black,
+            width: 1,
             style: BorderStyle.solid,
           ),
           image: DecorationImage(
