@@ -14,7 +14,6 @@ class _FMCarouselSliderState extends State<FMCarouselSlider> {
     return ListView.builder(
       scrollDirection: Axis.horizontal,
       itemCount: 8,
-      // physics: BouncingScrollPhysics(),
       itemBuilder: ((context, index) {
         return MovieImage(
           image: "https://picsum.photos/250?image=4",
