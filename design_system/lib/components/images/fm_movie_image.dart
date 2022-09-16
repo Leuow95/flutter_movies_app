@@ -20,11 +20,6 @@ class _MovieImageState extends State<MovieImage> {
       height: MediaQuery.of(context).size.height * 0.5,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
-          border: Border.all(
-            color: Colors.black,
-            width: 1,
-            style: BorderStyle.solid,
-          ),
           image: DecorationImage(
             image: NetworkImage(widget.image),
             fit: BoxFit.fitHeight,
