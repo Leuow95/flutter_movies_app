@@ -12,7 +12,11 @@ class MoviesRepositoryImpl implements MoviesRepository {
   Future<Either<MoviesFailure, List<Movie>>> getMovies() async {
     try {
       final response = await dataSource.getPopularMovies();
-      return Right(response);
+
+      return response.fold(
+        (failure) => left(DataSourceError(failure.toString())),
+        (movies) => right(movies),
+      );
     } on DataSourceError catch (e) {
       return Left(e);
     } catch (e) {

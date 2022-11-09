@@ -20,4 +20,15 @@ class MovieModel extends Movie {
       releaseDate: DateTime.parse(json["release_date"]),
     );
   }
+
+  Movie toEntity() {
+    return Movie(
+      rate: rate,
+      name: name,
+      synopsis: synopsis,
+      thumbImage: thumbImage,
+      genres: genres,
+      releaseDate: releaseDate,
+    );
+  }
 }
