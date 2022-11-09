@@ -2,11 +2,21 @@ import 'package:flutter_movies_app/features/movies/domain/failures/movies_failur
 import 'package:flutter_movies_app/features/movies/domain/entities/movies.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_movies_app/features/movies/domain/repositories/movies_repository.dart';
+import 'package:flutter_movies_app/features/movies/infra/datasources/api_tmdb.dart';
 
 class MoviesRepositoryImpl implements MoviesRepository {
+  final ApiMoviesDataSource dataSource;
+
+  MoviesRepositoryImpl(this.dataSource);
   @override
-  Future<Either<MoviesFailure, List<Movie>>> getMovies() {
-    // TODO: implement getMovies
-    throw UnimplementedError();
+  Future<Either<MoviesFailure, List<Movie>>> getMovies() async {
+    try {
+      final response = await dataSource.getPopularMovies();
+      return Right(response);
+    } on DataSourceError catch (e) {
+      return Left(e);
+    } catch (e) {
+      return Left(DataSourceError(e.toString()));
+    }
   }
 }
